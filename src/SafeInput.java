@@ -22,7 +22,7 @@ public class SafeInput {
                 System.out.println("\nYou must provide some valid input");
             }
 
-        }while (nonZeroLength.length == 0);
+        }while (!(nonZeroLength.length() == 0));
 
         return nonZeroLength;
 
@@ -189,7 +189,7 @@ public class SafeInput {
      * @param pipe This gets the users input
      * @param prompt This prompts the user for the input
      *
-     */
+
 
     public static boolean getYNConfirm(Scanner pipe, String prompt)
 
@@ -206,7 +206,7 @@ public class SafeInput {
                 done = true;
             }else if(opt2.equalsIgnoreCase(ans))
 
-        }while(!done);
+        }while(!done);*/
 
 
 

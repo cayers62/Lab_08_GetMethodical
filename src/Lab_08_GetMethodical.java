@@ -1,10 +1,30 @@
 import java.util.Scanner;
-
+import java.util.regex.Matcher;
 public class Lab_08_GetMethodical
 {
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
+
+        String firstName = getNonZeroLengthString(in, "Enter your first name ");
+        System.out.println("\n You said your first name was: " + firstName);
+        boolean confirm = getYNConfirm(in, "Enter a Y/N to continue: ");
+
+         int num = getInt(in, "Enter a number");
+        System.out.println("You said the number is: " + num);
+
+        /**double num = getDouble(in,"Enter any real number");
+        System.out.println("\n You said your number was:" + num);
+
+        int val = getRangedInt(in,"Enter a number between"  ,25, 100);
+        System.out.println("You said your number was:" + val);
+
+        double val = getRangedDouble(in, "Enter a number between" , 2, 375);
+        System.out.println("\nYou said your number was:" + val);
+
+        String phone = getRegExString(in, "Enter your phone number", "^\\d{3}-\\d{3}-\\d{4}$");
+        System.out.println("You said your phone number was:" + phone);*/
+
     }
         //End of Main
 
@@ -27,11 +47,12 @@ public class Lab_08_GetMethodical
             nonZeroLength = pipe.nextLine();
 
             if(nonZeroLength.length() == 0)
+
             {
                 System.out.println("\nYou must provide some valid input");
             }
 
-        }while (!nonZeroLength.length == 0);
+        }while (nonZeroLength.length() == 0);
 
         return nonZeroLength;
 
@@ -51,7 +72,7 @@ public class Lab_08_GetMethodical
 
        do {
 
-           System.out.print("ln" + prompt + ":");
+           System.out.print("\n" + prompt + ":");
 
            if (pipe.hasNextInt()) {
                value = pipe.nextInt();
@@ -81,7 +102,7 @@ public class Lab_08_GetMethodical
 
         do {
 
-            System.out.print("ln" + prompt + ":");
+            System.out.print("\n" + prompt + ":");
 
             if (pipe.hasNextDouble()) {
                 value = pipe.nextDouble();
@@ -213,36 +234,17 @@ public class Lab_08_GetMethodical
              String ans = pipe.nextLine();
              if(opt1.equalsIgnoreCase(ans)) {
                  done = true;
-             }else if(opt2.equalsIgnoreCase(ans))
+             }else if
+             (opt2.equalsIgnoreCase(ans)){
 
-        }while(!done);
-
-
-
+                   break;}
 
 
 
+        }while (!done);
 
 
-
-
-
-
-
-
-
-
+        return done;
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-}
